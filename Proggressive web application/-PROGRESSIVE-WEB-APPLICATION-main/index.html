@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopPWA - Your Offline Shopping Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="icons/favicon.svg" alt="ShopPWA Logo" class="logo-img">
+                ShopPWA
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search products..." id="search-input">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="nav-items">
+                <a href="#" class="active">Home</a>
+                <a href="#products">Products</a>
+                <a href="#wishlist" class="wishlist-link">
+                    <i class="fas fa-heart"></i>
+                    <span class="wishlist-count">0</span>
+                </a>
+                <a href="#cart" class="cart-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="mobile-menu">
+            <a href="#" class="active">Home</a>
+            <a href="#products">Products</a>
+            <a href="#wishlist">Wishlist</a>
+            <a href="#cart">Cart</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to ShopPWA</h1>
+                <p>Your offline-ready shopping experience</p>
+                <a href="#products" class="cta-button">Shop Now</a>
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <div class="filters">
+                <div class="filter-group">
+                    <label>Category:</label>
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="audio">Audio</option>
+                        <option value="wearables">Wearables</option>
+                        <option value="accessories">Accessories</option>
+                        <option value="gaming">Gaming</option>
+                        <option value="smart-home">Smart Home</option>
+                        <option value="laptops">Laptops</option>
+                        <option value="cameras">Cameras</option>
+                        <option value="tablets">Tablets</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Price Range:</label>
+                    <select id="price-filter">
+                        <option value="all">All Prices</option>
+                        <option value="0-50">$0 - $50</option>
+                        <option value="50-100">$50 - $100</option>
+                        <option value="100-200">$100 - $200</option>
+                        <option value="200+">$200+</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Sort By:</label>
+                    <select id="sort-filter">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Rating</option>
+                    </select>
+                </div>
+            </div>
+
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <div class="product-card" data-category="audio" data-price="99.99">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" alt="Premium Headphones">
+                        <button class="add-to-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Headphones</h3>
+                        <p class="price">$99.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div class="reviews">
+                            <span class="review-count">15 reviews</span>
+                            <button class="view-reviews">View Reviews</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="wearables" data-price="149.99">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="Smart Watch">
+                        <button class="add-to-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Smart Watch</h3>
+                        <p class="price">$149.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div class="reviews">
+                            <span class="review-count">22 reviews</span>
+                            <button class="view-reviews">View Reviews</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="audio" data-price="79.99">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500" alt="Wireless Earbuds">
+                        <button class="add-to-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Wireless Earbuds</h3>
+                        <p class="price">$79.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div class="reviews">
+                            <span class="review-count">18 reviews</span>
+                            <button class="view-reviews">View Reviews</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gaming" data-price="299.99">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500" alt="Gaming Headset">
+                        <button class="add-to-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pro Gaming Headset</h3>
+                        <p class="price">$299.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div class="reviews">
+                            <span class="review-count">24 reviews</span>
+                            <button class="view-reviews">View Reviews</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="smart-home" data-price="199.99">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=500" alt="Smart Speaker">
+                        <button class="add-to-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Smart Home Speaker</h3>
+                        <p class="price">$199.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div class="reviews">
+                            <span class="review-count">18 reviews</span>
+                            <button class="view-reviews">View Reviews</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories" data-price="49.99">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=500" alt="Wireless Charger">
+                        <button class="add-to-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Fast Wireless Charger</h3>
+                        <p class="price">$49.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div class="reviews">
+                            <span class="review-count">12 reviews</span>
+                            <button class="view-reviews">View Reviews</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Laptop Products -->
+                <div class="product-card" data-category="laptops" data-price="1299.99">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500" alt="Ultrabook Pro">
+                        <button class="add-to-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Ultrabook Pro</h3>
+                        <p class="price">$1,299.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div class="reviews">
+                            <span class="review-count">32 reviews</span>
+                            <button class="view-reviews">View Reviews</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="laptops" data-price="899.99">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500" alt="Gaming Laptop">
+                        <button class="add-to-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Gaming Laptop</h3>
+                        <p class="price">$899.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div class="reviews">
+                            <span class="review-count">28 reviews</span>
+                            <button class="view-reviews">View Reviews</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Camera Products -->
+                <div class="product-card" data-category="cameras" data-price="799.99">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500" alt="DSLR Camera">
+                        <button class="add-to-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Professional DSLR</h3>
+                        <p class="price">$799.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div class="reviews">
+                            <span class="review-count">45 reviews</span>
+                            <button class="view-reviews">View Reviews</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="cameras" data-price="399.99">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=500" alt="Mirrorless Camera">
+                        <button class="add-to-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Mirrorless Camera</h3>
+                        <p class="price">$399.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div class="reviews">
+                            <span class="review-count">36 reviews</span>
+                            <button class="view-reviews">View Reviews</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Tablet Products -->
+                <div class="product-card" data-category="tablets" data-price="499.99">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500" alt="Pro Tablet">
+                        <button class="add-to-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pro Tablet</h3>
+                        <p class="price">$499.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div class="reviews">
+                            <span class="review-count">29 reviews</span>
+                            <button class="view-reviews">View Reviews</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="tablets" data-price="299.99">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500" alt="Mini Tablet">
+                        <button class="add-to-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Mini Tablet</h3>
+                        <p class="price">$299.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div class="reviews">
+                            <span class="review-count">21 reviews</span>
+                            <button class="view-reviews">View Reviews</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Smart Home Products -->
+                <div class="product-card" data-category="smart-home" data-price="149.99">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=500" alt="Smart Light Bulb">
+                        <button class="add-to-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Smart Light Bulb Set</h3>
+                        <p class="price">$149.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div class="reviews">
+                            <span class="review-count">19 reviews</span>
+                            <button class="view-reviews">View Reviews</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="smart-home" data-price="89.99">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=500" alt="Smart Thermostat">
+                        <button class="add-to-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Smart Thermostat</h3>
+                        <p class="price">$89.99</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div class="reviews">
+                            <span class="review-count">15 reviews</span>
+                            <button class="view-reviews">View Reviews</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="wishlist" class="wishlist-section">
+            <h2>My Wishlist</h2>
+            <div class="wishlist-container">
+                <div class="wishlist-items">
+                    <!-- Wishlist items will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="cart" class="cart-section">
+            <h2>Shopping Cart</h2>
+            <div class="cart-container">
+                <div class="cart-items">
+                    <!-- Cart items will be dynamically added here -->
+                </div>
+                <div class="cart-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-item">
+                        <span>Subtotal</span>
+                        <span class="subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Shipping</span>
+                        <span class="shipping">$0.00</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>Total</span>
+                        <span class="total-amount">$0.00</span>
+                    </div>
+                    <button class="checkout-button">Proceed to Checkout</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="reviews-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-body">
+                    <h3>Product Reviews</h3>
+                    <div class="reviews-list">
+                        <!-- Reviews will be dynamically added here -->
+                    </div>
+                    <div class="add-review">
+                        <h4>Write a Review</h4>
+                        <div class="rating-input">
+                            <i class="far fa-star" data-rating="1"></i>
+                            <i class="far fa-star" data-rating="2"></i>
+                            <i class="far fa-star" data-rating="3"></i>
+                            <i class="far fa-star" data-rating="4"></i>
+                            <i class="far fa-star" data-rating="5"></i>
+                        </div>
+                        <textarea placeholder="Write your review here..."></textarea>
+                        <button class="submit-review">Submit Review</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>ShopPWA is your offline-ready shopping destination for the best tech products.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#cart">Cart</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ShopPWA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="quick-view-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <!-- Quick view content will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
